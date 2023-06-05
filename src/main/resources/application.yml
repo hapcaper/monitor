@@ -1,0 +1,10 @@
+logging:
+    config: classpath:log4j2.xml
+
+grafana:
+    apikey: eyJrIjoicDY3MDBVVGFpSDZOeDNtNmY0azJsSHhYVVREZDRza1EiLCJuIjoiYXNkIiwiaWQiOjF9
+    apikey-name: asd
+
+
+
+
