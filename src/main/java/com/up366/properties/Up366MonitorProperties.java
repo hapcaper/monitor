@@ -18,6 +18,8 @@ public class Up366MonitorProperties {
 
     private String help;
 
+    private String job;
+
     public String getGatewayHost() {
         return gatewayHost;
     }
@@ -48,5 +50,13 @@ public class Up366MonitorProperties {
 
     public void setHelp(String help) {
         this.help = help;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
     }
 }

@@ -4,7 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import com.up366.httpapi.param.CreatePanelParam;
 import com.up366.httpapi.template.GrafanaApiTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * Description:
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author 李自豪 lzh
  * @since 2023/2/27
  */
-@Service
+@Component
 public class GrafanaRemoteService {
 
     public String createPanel(CreatePanelParam param) {

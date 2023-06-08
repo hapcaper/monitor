@@ -1,6 +1,7 @@
 package com.up366.monitor;
 
 import com.up366.httpapi.service.GrafanaRemoteService;
+import com.up366.properties.Up366MonitorProperties;
 import io.prometheus.client.Counter;
 import io.prometheus.client.Gauge;
 import io.prometheus.client.Info;
@@ -43,11 +44,14 @@ public class Up366Monitor {
     @Autowired
     private GrafanaRemoteService grafanaRemoteService;
 
+    @Autowired
+    private Up366MonitorProperties properties;
+
 
     public void incOne(String label) {
         counter.labels(label).inc();
         try {
-            pushGateway.pushAdd(counter, label);
+            pushGateway.pushAdd(counter, properties.getJob());
         } catch (IOException e) {
             logger.error("gateWay counterIncOne push监控数据失败,label:{}", label, e);
         }
@@ -57,7 +61,7 @@ public class Up366Monitor {
     public void gaugeIncOne(String label) {
         gauge.labels(label).inc();
         try {
-            pushGateway.pushAdd(gauge, label);
+            pushGateway.pushAdd(gauge, properties.getJob());
         } catch (IOException e) {
             logger.error("gateWay gaugeInc push监控数据失败,label:{}", label, e);
         }
@@ -67,7 +71,7 @@ public class Up366Monitor {
     public void gaugeDecOne(String label) {
         gauge.labels(label).dec();
         try {
-            pushGateway.pushAdd(gauge, label);
+            pushGateway.pushAdd(gauge, properties.getJob());
         } catch (IOException e) {
             logger.error("gateWay gaugeDec push监控数据失败,label:{}", label, e);
         }

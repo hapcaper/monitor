@@ -1,5 +1,6 @@
 package com.up366.config;
 
+import com.up366.httpapi.service.GrafanaRemoteService;
 import com.up366.monitor.Up366Monitor;
 import com.up366.properties.Up366MonitorProperties;
 import io.prometheus.client.Counter;
@@ -23,7 +24,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @EnableConfigurationProperties(Up366MonitorProperties.class)
-@Import(Up366Monitor.class)
+@Import({Up366Monitor.class, GrafanaRemoteService.class})
 public class Up366MonitorConfig {
 
     @Autowired
@@ -53,6 +54,7 @@ public class Up366MonitorConfig {
                 .help("summary:" + properties.getHelp())
                 .register();
     }
+
     @Bean
     public Gauge gauge() {
         return Gauge.build()
@@ -61,6 +63,7 @@ public class Up366MonitorConfig {
                 .help("gauge:" + properties.getHelp())
                 .register();
     }
+
     @Bean
     public Info info() {
         return Info.build()
