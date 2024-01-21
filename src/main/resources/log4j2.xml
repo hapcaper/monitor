@@ -3,7 +3,7 @@
 <configuration status="error">
     <properties>
 
-        <Property name="app_name">up366-monitor</Property>
+        <Property name="app_name">grafana-monitor</Property>
         <Property name="log_path">/Users/lizihao/${app_name}/${sys:server.port}</Property>
         <!-- 单个日志原文件大小，如  100 MB -->
         <Property name="file_size">100 MB</Property>

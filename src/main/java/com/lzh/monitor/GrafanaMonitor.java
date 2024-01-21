@@ -1,7 +1,7 @@
-package com.up366.monitor;
+package com.lzh.monitor;
 
-import com.up366.httpapi.service.GrafanaRemoteService;
-import com.up366.properties.Up366MonitorProperties;
+import com.lzh.httpapi.service.GrafanaRemoteApi;
+import com.lzh.properties.MonitorProperties;
 import io.prometheus.client.Counter;
 import io.prometheus.client.Gauge;
 import io.prometheus.client.Info;
@@ -22,9 +22,9 @@ import java.io.IOException;
  */
 
 @Component
-public class Up366Monitor {
+public class GrafanaMonitor {
 
-    private static final Logger logger = LoggerFactory.getLogger(Up366Monitor.class);
+    private static final Logger logger = LoggerFactory.getLogger(GrafanaMonitor.class);
 
     @Autowired
     private Counter counter;
@@ -42,10 +42,10 @@ public class Up366Monitor {
     private PushGateway pushGateway;
 
     @Autowired
-    private GrafanaRemoteService grafanaRemoteService;
+    private GrafanaRemoteApi grafanaRemoteApi;
 
     @Autowired
-    private Up366MonitorProperties properties;
+    private MonitorProperties properties;
 
 
     public void incOne(String label) {

@@ -1,4 +1,4 @@
-package com.up366.httpapi.param;
+package com.lzh.httpapi.param;
 
 /**
  * Description:

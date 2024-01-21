@@ -1,18 +1,13 @@
-package com.up366;
+package com.lzh;
 
-import com.up366.monitor.Up366Monitor;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import java.io.IOException;
-
 /**
  * Unit test for simple App.
  */
-public class AppTest
-    extends TestCase
-{
+public class AppTest extends TestCase {
     /**
      * Create the test case
      *
@@ -35,6 +30,8 @@ public class AppTest
      * Rigourous Test :-)
      */
     public void testApp() {
+        System.out.println("hello world");
+
 
     }
 }

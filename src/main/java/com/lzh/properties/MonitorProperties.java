@@ -1,4 +1,4 @@
-package com.up366.properties;
+package com.lzh.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -8,8 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author 李自豪 lzh
  * @since 2022/12/5
  */
-@ConfigurationProperties(prefix = "com.up366.monitor")
-public class Up366MonitorProperties {
+@ConfigurationProperties(prefix = "com.lzh.monitor")
+public class MonitorProperties {
 
     private String gatewayHost;
     private String name;

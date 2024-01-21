@@ -1,1 +1,1 @@
-#org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.up366.config.Up366MonitorConfig
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lzh.config.MonitorConfig

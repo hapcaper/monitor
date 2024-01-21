@@ -1,9 +1,9 @@
-package com.up366.httpapi.service;
+package com.lzh.httpapi.service;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
-import com.up366.httpapi.param.CreatePanelParam;
-import com.up366.httpapi.template.GrafanaApiTemplate;
+import com.lzh.httpapi.param.CreatePanelParam;
+import com.lzh.httpapi.template.GrafanaApiTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @since 2023/2/27
  */
 @Component
-public class GrafanaRemoteService {
+public class GrafanaRemoteApi {
 
     public String createPanel(CreatePanelParam param) {
         String requestBody = StrUtil.format(GrafanaApiTemplate.TEMPLATE, param.getIndex(), param.getTag(), param.getTagValue());

@@ -1,15 +1,14 @@
-package com.up366.config;
+package com.lzh.config;
 
-import com.up366.httpapi.service.GrafanaRemoteService;
-import com.up366.monitor.Up366Monitor;
-import com.up366.properties.Up366MonitorProperties;
+import com.lzh.httpapi.service.GrafanaRemoteApi;
+import com.lzh.monitor.GrafanaMonitor;
+import com.lzh.properties.MonitorProperties;
 import io.prometheus.client.Counter;
 import io.prometheus.client.Gauge;
 import io.prometheus.client.Info;
 import io.prometheus.client.Summary;
 import io.prometheus.client.exporter.PushGateway;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,12 +22,12 @@ import org.springframework.context.annotation.Import;
  */
 
 @Configuration
-@EnableConfigurationProperties(Up366MonitorProperties.class)
-@Import({Up366Monitor.class, GrafanaRemoteService.class})
-public class Up366MonitorConfig {
+@EnableConfigurationProperties(MonitorProperties.class)
+@Import({GrafanaMonitor.class, GrafanaRemoteApi.class})
+public class GrafanaMonitorConfig {
 
     @Autowired
-    private Up366MonitorProperties properties;
+    private MonitorProperties properties;
 
 
     @Bean

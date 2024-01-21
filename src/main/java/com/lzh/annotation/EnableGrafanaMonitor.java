@@ -1,6 +1,6 @@
-package com.up366.annotation;
+package com.lzh.annotation;
 
-import com.up366.config.Up366MonitorConfig;
+import com.lzh.config.GrafanaMonitorConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.Documented;
@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(Up366MonitorConfig.class)
-public @interface EnableUp366Monitor {
+@Import(GrafanaMonitorConfig.class)
+public @interface EnableGrafanaMonitor {
 
 }
