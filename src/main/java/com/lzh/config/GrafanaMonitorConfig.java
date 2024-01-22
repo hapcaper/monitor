@@ -71,4 +71,12 @@ public class GrafanaMonitorConfig {
                 .help("info:" + properties.getHelp())
                 .register();
     }
+
+    public MonitorProperties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(MonitorProperties properties) {
+        this.properties = properties;
+    }
 }

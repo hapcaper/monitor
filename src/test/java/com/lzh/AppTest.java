@@ -1,5 +1,7 @@
 package com.lzh;
 
+import com.lzh.config.GrafanaMonitorConfig;
+import com.lzh.properties.MonitorProperties;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -30,6 +32,12 @@ public class AppTest extends TestCase {
      * Rigourous Test :-)
      */
     public void testApp() {
+        GrafanaMonitorConfig grafanaMonitorConfig = new GrafanaMonitorConfig();
+        MonitorProperties properties = new MonitorProperties();
+        properties.setGatewayHost("localhost:9091");
+
+        grafanaMonitorConfig.setProperties(properties);
+
         System.out.println("hello world");
 
 
